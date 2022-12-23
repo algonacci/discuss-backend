@@ -6,5 +6,3 @@ $password = "";
 $db = "discuss";
 
 $connect = new mysqli($server, $user, $password, $db);
-
-?>
