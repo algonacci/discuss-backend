@@ -2,7 +2,7 @@
 include "../connection.php";
 
 $username = $_POST["username"];
-$password = $_POST["password"];
+$password = md5($_POST["password"]);
 
 $sql_check_username    = "SELECT * FROM user WHERE username = '$username'";
 $result_check_username = $connect->query($sql_check_username);
@@ -18,7 +18,7 @@ if ($result_check_username->num_rows > 0) {
             username = '$username',
             password = '$password',
             image = 'default_user_image.jpg'
-            ";
+        ";
  $result = $connect->query($sql);
 
  if ($result) {
